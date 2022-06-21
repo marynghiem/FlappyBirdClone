@@ -17,12 +17,12 @@ const Physics = (entities, { touches, time, dispatch }) => {
   Matter.Engine.update(engine, time.delta);
 
   for (let index = 1; index <= 2; index++) {
-    if (entities[`ObstaclesTop${index}`].body.bounds.max.x <= 50 && !entities[`ObstaclesTop${index}`].point) {
-      entities[`ObstaclesTop${index}`].point = true;
+    if (entities[`ObstacleTop${index}`].body.bounds.max.x <= 50 && !entities[`ObstacleTop${index}`].point) {
+      entities[`ObstacleTop${index}`].point = true;
       dispatch({ type: "new_point" });
     }
 
-    if (entities[`ObstaclesTop${index}`].body.bounds.max.x <= 0) {
+    if (entities[`ObstacleTop${index}`].body.bounds.max.x <= 0) {
       const pipeSizePos = getPipeSizePosPair(windowWidth * 0.9);
       Matter.Body.setPosition(entities[`ObstacleTop${index}`].body, pipeSizePos.pipeTop.pos);
       Matter.Body.setPosition(entities[`ObstacleBottom${index}`].body, pipeSizePos.pipeBottom.pos);
