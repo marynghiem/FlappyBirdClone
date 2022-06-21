@@ -20,6 +20,13 @@ export default (restart) => {
     physics: { engine, world },
     Bird: Bird(world, "green", { x: 50, y: 300 }, { height: 40, width: 40 }),
     ObstacleTop1: Obstacle(world, "ObstacleTop1", "red", pipeSizePosA.pipeTop.pos, pipeSizePosA.pipeTop.size),
+    ObstacleBottom1: Obstacle(
+      world,
+      "ObstacleBottom1",
+      "blue",
+      pipeSizePosA.pipeBottom.pos,
+      pipeSizePosA.pipeBottom.size
+    ),
     Floor: Floor(world, "green", { x: windowWidth / 2, y: windowHeight }, { height: 50, width: windowWidth }),
   };
 };
