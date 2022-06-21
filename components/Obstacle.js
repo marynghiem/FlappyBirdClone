@@ -28,7 +28,7 @@ const Obstacle = (props) => {
 };
 
 export default (world, label, color, pos, size) => {
-  const initialObstacle = Matter.Bodies.rectangle(pos.x, pos.y, size.width, size.height, { label });
+  const initialObstacle = Matter.Bodies.rectangle(pos.x, pos.y, size.width, size.height, { label, isStatic: true });
   Matter.World.add(world, initialObstacle);
 
   return {
